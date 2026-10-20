@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammed Imad Uddin &mdash; Resume</title>
+<style>
+  /* ---- Print / ATS-friendly resume ---- */
+  :root{
+    --ink:#15171c; --soft:#3b3f48; --line:#c9ccd4; --accent:#1f4e79; --faint:#5a5f6b;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:#e9ebef; }
+  body{
+    font-family:"Calibri","Segoe UI",Arial,sans-serif;
+    color:var(--ink); font-size:9.4pt; line-height:1.17;
+  }
+  .page{
+    background:#fff; width:8.5in; min-height:11in; margin:18px auto; padding:0.42in 0.5in;
+    box-shadow:0 6px 24px rgba(0,0,0,.18);
+  }
+  a{ color:var(--accent); text-decoration:none; }
+
+  /* Header */
+  .name{ font-size:19pt; font-weight:700; letter-spacing:.3px; color:var(--ink); }
+  .title{ font-size:10pt; color:var(--accent); font-weight:600; margin-top:2px; }
+  .contact{ font-size:9.2pt; color:var(--soft); margin-top:3px; }
+  .contact span{ white-space:nowrap; }
+  .sep{ color:var(--line); margin:0 7px; }
+
+  /* Sections */
+  h2.sec{
+    font-size:10.2pt; text-transform:uppercase; letter-spacing:1.1px; color:var(--accent);
+    border-bottom:1.5px solid var(--accent); padding-bottom:1.5px; margin:6px 0 3px;
+  }
+  .summary{ font-size:9.4pt; color:var(--soft); margin:3px 0 1px; }
+
+  .entry{ margin:0 0 3px; }
+  .entry .row{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+  .entry .role{ font-weight:700; color:var(--ink); font-size:10.5pt; }
+  .entry .org{ font-weight:600; color:var(--soft); }
+  .entry .meta{ font-size:9.2pt; color:var(--faint); white-space:nowrap; font-style:italic; }
+  .entry .sub{ font-size:9.4pt; color:var(--faint); font-style:italic; margin-top:1px; }
+
+  ul{ margin:1px 0 0; padding-left:15px; }
+  li{ margin:1.4px 0; color:var(--soft); }
+  li b, li strong{ color:var(--ink); }
+
+  .proj .row .role{ font-size:10.2pt; }
+  .tag{ font-size:9pt; color:var(--accent); font-weight:600; }
+
+  /* Skills */
+  table.skills{ width:100%; border-collapse:collapse; }
+  table.skills td{ vertical-align:top; padding:1.1px 0; font-size:9.3pt; }
+  table.skills td.k{ width:148px; font-weight:700; color:var(--ink); padding-right:8px; }
+  table.skills td.v{ color:var(--soft); }
+
+  .edu-row{ display:flex; justify-content:space-between; gap:10px; }
+  .edu-row .meta{ font-size:9.2pt; color:var(--faint); white-space:nowrap; }
+
+  @media print{
+    html,body{ background:#fff; }
+    .page{ box-shadow:none; margin:0; width:auto; min-height:auto; padding:0; }
+    @page{ size:Letter; margin:0.32in 0.5in; }
+    a{ color:var(--ink); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== HEADER ===== -->
+  <div class="name">Mohammed Imad Uddin</div>
+  <div class="title">Software Development Engineer II &nbsp;|&nbsp; AI / Machine Learning Engineer</div>
+  <div class="contact">
+    <span>imaduddin6005@gmail.com</span><span class="sep">|</span>
+    <span>+91 91540 01532</span><span class="sep">|</span>
+    <span>Bangalore, India</span><span class="sep">|</span>
+    <span><a href="https://github.com/guardian6005">github.com/guardian6005</a></span><span class="sep">|</span>
+    <span><a href="https://in.linkedin.com/in/imad-uddin-37185714b">LinkedIn</a></span>
+  </div>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <h2 class="sec">Professional Experience</h2>
+
+  <div class="entry">
+    <div class="row">
+      <div><span class="role">Software Development Engineer II</span> &nbsp;&middot;&nbsp; <span class="org">Dell Technologies</span></div>
+      <div class="meta">Jul 2025 &ndash; Present &middot; Bangalore, India</div>
+    </div>
+    <ul>
+      <li>Designed and deployed an enterprise <b>RAG-based automated Root Cause Analysis</b> system on top of CI/CD production pipelines; owned <b>end-to-end model delivery</b> &mdash; encompassing large-scale <b>data preprocessing</b> (45,000+ historical defects), <b>feature engineering</b>, advanced text chunking, and multi-strategy <b>hybrid retrieval</b> (dense + sparse semantic search) using <b>Reciprocal Rank Fusion</b> with <b>ChromaDB</b> and <b>FastAPI</b> &mdash; reducing manual triage by <b>&gt;60%</b>.</li>
+      <li><b>Fine-tuned sentence-transformer</b> embeddings (<b>all-MiniLM-L6-v2</b>, <b>all-mpnet-base-v2</b>) for domain-specific NLP via <b>contrastive learning</b> (MultipleNegativesRankingLoss, 7,500+ curated pairs) with cluster-aware negative sampling and <b>synthetic query generation</b>; built a reproducible <b>LLM evaluation harness</b> (10,000+ golden Q&amp;A test sets, Recall@K, MRR, nDCG@K, RAGAS) achieving <b>+52% Recall@10</b>; integrated <b>agentic workflows</b> with <b>tool/function calling</b>, routing, and <b>structured outputs</b> for automated defect resolution.</li>
+      <li>Implemented the <b>SIRA (SuperIntelligent Retrieval Agent)</b> research paper (<a href="https://arxiv.org/abs/2605.06647">arXiv:2605.06647</a>) to enhance the RAG pipeline&rsquo;s sparse retrieval stage &mdash; applied <b>corpus-side and query-side LLM vocabulary enrichment</b>, <b>document-frequency filtering</b>, and <b>inverted-index n-gram injection</b> with <b>weighted BM25 scoring</b>; benchmarked on <b>BEIR</b> datasets (SciFact, ArguAna) using a <b>Qwen3-30B-A3B MoE</b> model, improving <b>Recall@10</b> and <b>NDCG@10</b> through systematic <b>hyperparameter tuning</b> of DF-filter threshold, expansion weight, and BM25 length normalisation.</li>
+      <li>Built a unified <b>MCP (Model Context Protocol) server</b> integrating Jira, GitHub, Confluence, and PPDM; contributed <b>reusable patterns, templates, and libraries</b> packaged as a production-ready AI agent adopted by <b>multiple cross-functional teams</b> for productivity automation.</li>
+      <li><b>CI/CD Lead (8 months):</b> operated end-to-end <b>production pipelines</b> (batch and real-time) with <b>versioning, continuous delivery, monitoring and alerting</b> for <b>40+ cross-functional teams</b>; architected <b>Ansible</b> automation eliminating <b>100+ hours/release</b>; applied <b>responsible AI and governance-aligned practices</b> including <b>guardrails</b> and documentation.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <div><span class="role">Software Engineering Intern</span> &nbsp;&middot;&nbsp; <span class="org">Dell Technologies</span></div>
+      <div class="meta">May 2024 &ndash; Mar 2025 &middot; Bangalore, India</div>
+    </div>
+    <ul>
+      <li>Trained and evaluated an <b>XGBoost classifier</b> for agile story spillover prediction using sprint-level features; performed <b>feature engineering</b>, hyperparameter tuning, and <b>model evaluation</b> (precision, recall, F1, AUC-ROC) to surface delivery-risk signals to product stakeholders.</li>
+      <li>Delivered end-to-end REST API automation for enterprise data-protection features in <b>Java 17 / Spring Boot</b> integrated with <b>Jenkins CI/CD pipelines</b> (versioning, continuous delivery, monitoring) in an Agile model.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <div><span class="role">Research Assistant</span> &nbsp;&middot;&nbsp; <span class="org">NITK Surathkal &amp; IIT Hyderabad</span></div>
+      <div class="meta">Aug 2022 &ndash; Mar 2024</div>
+    </div>
+    <ul>
+      <li>Trained <b>LSTM</b> models for time-series prediction and <b>Naive Bayes classifiers</b> for NLP-based text classification; conducted activation-function comparison studies (Adam vs RMSProp) for nonlinear regression using ANNs.
+        [<a href="https://github.com/guardian6005/Adam-vs-RMSProp-for-Nonlinear-Regression-using-ANN">GitHub</a>]
+        [<a href="https://github.com/guardian6005/Stress-Detection-from-Textual-Data-using-NLP-and-Naive-Bayes-Classifier">GitHub</a>]
+      </li>
+    </ul>
+  </div>
+
+  <!-- ===== PROJECTS ===== -->
+  <h2 class="sec">Key Projects</h2>
+
+  <div class="entry proj">
+    <div class="row">
+      <div><span class="role">MonteEdge &mdash; Quantitative Strategy Validation Framework</span></div>
+      <div class="meta"><a href="https://github.com/guardian6005/MonteEdge">github.com/guardian6005/MonteEdge</a></div>
+    </div>
+    <div class="sub tag">Python &middot; Bootstrap Monte Carlo &middot; Black-Scholes &middot; NumPy/SciPy &middot; Streamlit &middot; Plotly</div>
+    <ul>
+      <li>Built an <b>8-module, end-to-end predictive framework</b> that validates trading strategies via <b>Bootstrap Monte Carlo</b> (10,000 simulations &times; 200 trades), a 4-gate/3-trigger signal engine over multi-timeframe levels, and a <b>Black-Scholes</b> synthetic options pricer (HV-derived IV proxy, all five Greeks).</li>
+      <li>Drove a data-backed V1&rarr;V2 strategy refinement that lifted <b>expectancy +311%</b> (0.046R&rarr;0.189R) and <b>Sharpe +319%</b> (0.73&rarr;3.06) while cutting &gt;20% drawdown probability from <b>35.5% to 0.9%</b>.</li>
+      <li>Shipped an interactive <b>5-page Streamlit dashboard</b> with publication-grade Matplotlib/Plotly analytics for walk-forward P&amp;L, MFE/MAE, and MC convergence.</li>
+    </ul>
+  </div>
+
+  <!-- ===== SKILLS ===== -->
+  <h2 class="sec">Technical Skills</h2>
+  <table class="skills">
+    <tr><td class="k">ML / Deep Learning</td><td class="v">Supervised &amp; Unsupervised Learning, CNN, RNN/LSTM, Transformers, NLP, Classification, Regression, XGBoost, Feature Engineering, Embeddings, Fine-Tuning, Contrastive Learning, Model Inference</td></tr>
+    <tr><td class="k">GenAI / Agents</td><td class="v">LangChain, Agentic AI, Multi-Agent Systems, MCP Servers, RAG, Hybrid Retrieval, Vector Databases (ChromaDB, Qdrant), Prompt Engineering, Tool/Function Calling, LLM Evaluation, Guardrails</td></tr>
+    <tr><td class="k">Quant / Scientific</td><td class="v">Monte Carlo Simulation, Black-Scholes &amp; Greeks, Statistical Modeling, Backtesting, NumPy, SciPy, pandas</td></tr>
+    <tr><td class="k">Frameworks</td><td class="v">PyTorch, TensorFlow, scikit-learn, Sentence-Transformers, HuggingFace Transformers, FastAPI, Streamlit, Spring Boot</td></tr>
+    <tr><td class="k">Languages</td><td class="v">Python, Java 17, SQL, Groovy</td></tr>
+    <tr><td class="k">Infra / DevOps</td><td class="v">Docker, Kubernetes, AWS, Ansible, Jenkins, CI/CD Pipelines, MLOps, Git, Linux</td></tr>
+  </table>
+
+  <!-- ===== EDUCATION ===== -->
+  <h2 class="sec">Education</h2>
+  <div class="entry">
+    <div class="edu-row">
+      <div><b>NIT Karnataka (NITK), Surathkal</b> &mdash; M.Tech, Computational &amp; Data Science</div>
+      <div class="meta">Aug 2023 &ndash; 2025 &middot; CGPA 8.49</div>
+    </div>
+    <div class="edu-row">
+      <div><b>CVR College of Engineering, Hyderabad</b> &mdash; B.Tech, Mechanical Engineering</div>
+      <div class="meta">Aug 2017 &ndash; Jun 2021 &middot; CGPA 8.64</div>
+    </div>
+  </div>
+
+  <!-- ===== ACHIEVEMENTS ===== -->
+  <h2 class="sec">Achievements</h2>
+  <ul>
+    <li><b>Hackathon Winner</b> (Agentic AI project, adopted at Dell) &middot; <b>97th percentile, GATE (ME) 2022</b> &middot; cleared BARC &amp; HPCL PG exams.</li>
+  </ul>
+
+</div>
+</body>
+</html>
